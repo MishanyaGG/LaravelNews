@@ -4,7 +4,7 @@ function onchangeSelectFilter(){
     if (listFilter.value == 'new')
         window.location.href = '/';
     if (listFilter.value == 'old')
-        window.location.href = '../news/old';
+        window.location.href = '../old';
 }
 
 // Получаем кнопку с удалением категории

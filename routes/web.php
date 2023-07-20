@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 // Главная страница
 Route::get('/','NewsController@index')->name('index');
 
+Route::get('/old','NewsController@old')->name('old');
+
 // GET, POST URL - создание новости
 Route::match(['get','post'],'/editNews','NewsController@create')->name('newsCreate');
 

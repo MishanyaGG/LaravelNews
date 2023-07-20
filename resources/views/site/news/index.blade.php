@@ -29,6 +29,12 @@
 @endsection
 
 @section('content')
+
+    <select id="listFilter" onchange="onchangeSelectFilter()" style="width: 30%; margin-top: 10px" class="form-control">
+        <option selected disabled>Сортировка новостей</option>
+        <option value="new">Актуальные</option>
+        <option value="old">Старые</option>
+    </select>
     <div id="w0" class="row g-4 py-5">
         @foreach($news as $news_values)
 

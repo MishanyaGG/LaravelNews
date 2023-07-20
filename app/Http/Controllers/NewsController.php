@@ -17,7 +17,14 @@ class NewsController extends Controller
     public function index(){
 
         return view('site.news.index',[
-            'news'=>News::paginate(3),
+            'news'=>News::orderBy('date','desc')->paginate(3),
+            'categories'=>Categories::all()
+        ]);
+    }
+
+    public function old(){
+        return view('site.news.index',[
+            'news'=>News::orderBy('date')->paginate(3),
             'categories'=>Categories::all()
         ]);
     }
