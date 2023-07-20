@@ -10,7 +10,10 @@ use Illuminate\Routing\Route;
 
 class NewsController extends Controller
 {
-    // Главная страница
+    /**
+     * Главная страница
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
     public function index(){
 
         return view('site.news.index',[
@@ -22,6 +25,7 @@ class NewsController extends Controller
     /**
      * Создание новости
      * @param Request $rq
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse
      */
     public function create(Request $rq){
 
@@ -36,5 +40,31 @@ class NewsController extends Controller
 
             return redirect()->route('index');
         }
+    }
+
+    /**
+     * Подробная информация о новости
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
+    public function more($id){
+        $news = new News();
+
+        return view('site.news.more',[
+            'news'=>$news->findById($id),
+            'categories'=>Categories::all()
+        ]);
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete($id){
+        $news = new News();
+
+        $news->deleteNews($id);
+
+        return redirect()->route('index');
     }
 }

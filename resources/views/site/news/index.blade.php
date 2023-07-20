@@ -38,6 +38,10 @@
                     @endforeach
 
                     <p>{{$news_values->information}}</p>
+
+                    <a href="{{route('more',$news_values->id)}}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a href="{{route('delete',$news_values->id)}}"><button class="btn btn-danger">Удалить</button></a>
+                    <a href="{{route('more',$news_values->id)}}"><button class="btn btn-secondary">Подробнее</button></a>
                 </div>
 
         @endforeach

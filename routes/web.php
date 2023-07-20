@@ -20,3 +20,8 @@ Route::get('/','NewsController@index')->name('index');
 // GET, POST URL - создание новости
 Route::match(['get','post'],'/editNews','NewsController@create')->name('newsCreate');
 
+// Подробная информация новости
+Route::get('/more/{id}','NewsController@more')->name('more');
+
+Route::get('/delete/{id}','NewsController@delete')->name('delete');
+

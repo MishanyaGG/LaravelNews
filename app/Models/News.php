@@ -36,8 +36,8 @@ class News extends Model
 
     /**
      * Поиск по id
-     * @param integer $id
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param int $id
+     * @return mixed
      */
     public function findById($id){
         return News::find($id);
@@ -45,6 +45,7 @@ class News extends Model
 
     /**
      * Получение категории из модели Categories
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function categories(){
         return $this->belongsTo(Categories::class,'id_categories','id');
@@ -53,6 +54,7 @@ class News extends Model
     /**
      * Создание новости
      * @param Request $values
+     * @return void
      */
     public function createNews($values){
         $instance = new News();
@@ -71,7 +73,8 @@ class News extends Model
 
     /**
      * Удаление записи по id
-     * @param integer $id
+     * @param int $id
+     * @return void
      */
     public function deleteNews($id){
         News::find($id)->delete();
