@@ -349,8 +349,8 @@ class ComposerStaticInit6aa5e6e4f79d29eb7ecc51cbca0e64ab
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -514,7 +514,9 @@ class ComposerStaticInit6aa5e6e4f79d29eb7ecc51cbca0e64ab
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoriesController.php',
+        'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
+        'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -525,7 +527,9 @@ class ComposerStaticInit6aa5e6e4f79d29eb7ecc51cbca0e64ab
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Categories' => __DIR__ . '/../..' . '/app/Models/Categories.php',
+        'App\\Models\\News' => __DIR__ . '/../..' . '/app/Models/News.php',
+        'App\\Models\\Users' => __DIR__ . '/../..' . '/app/Models/Users.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
