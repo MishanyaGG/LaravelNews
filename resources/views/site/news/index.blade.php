@@ -31,17 +31,13 @@
                 <div class="feature col">
                     <h3 class="fs-2">{{$news_values->header}}</h3>
 
-                    @foreach($categories as $category_values)
-                        @if($news_values->id_categories == $category_values->id)
-                            <p style="color: green">{{$category_values->name_of_category}}</p> <p>Дата подачи {{$news_values->date}}</p>
-                        @endif
-                    @endforeach
+                    <p style="color: green">{{$news_values->categories->name_of_category}}</p> <p>Дата подачи {{$news_values->date}}</p>
 
                     <p>{{$news_values->information}}</p>
 
                     <a href="{{route('more',$news_values->id)}}"><button class="btn btn-primary">Подробнее</button></a>
                     <a href="{{route('delete',$news_values->id)}}"><button class="btn btn-danger">Удалить</button></a>
-                    <a href="{{route('more',$news_values->id)}}"><button class="btn btn-secondary">Подробнее</button></a>
+                    <a href="{{route('update',$news_values->id)}}"><button class="btn btn-secondary">Изменить</button></a>
                 </div>
 
         @endforeach

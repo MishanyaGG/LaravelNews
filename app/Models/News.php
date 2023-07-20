@@ -35,15 +35,6 @@ class News extends Model
     }
 
     /**
-     * Поиск по id
-     * @param int $id
-     * @return mixed
-     */
-    public function findById($id){
-        return News::find($id);
-    }
-
-    /**
      * Получение категории из модели Categories
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -58,6 +49,28 @@ class News extends Model
      */
     public function createNews($values){
         $instance = new News();
+
+        try {
+            $instance->header = $values['header'];
+            $instance->id_categories = $values['category'];
+            $instance->information = $values['information'];
+            $instance->date = date('Y-m-d');
+
+            $instance->save();
+        } catch (\Exception $exception){
+            dd($exception);
+        }
+    }
+
+    /**
+     * Изменение значений новости
+     * @param int $id
+     * @param Request $values
+     * @return void
+     */
+    public function updateNews($id, $values)
+    {
+        $instance = News::find($id);
 
         try {
             $instance->header = $values['header'];

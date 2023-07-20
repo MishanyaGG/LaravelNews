@@ -23,5 +23,9 @@ Route::match(['get','post'],'/editNews','NewsController@create')->name('newsCrea
 // Подробная информация новости
 Route::get('/more/{id}','NewsController@more')->name('more');
 
+// Удаление новости
 Route::get('/delete/{id}','NewsController@delete')->name('delete');
+
+// Изменение новости
+Route::match(['get','post'],'/update/{id}','NewsController@update')->name('update');
 

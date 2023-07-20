@@ -43,15 +43,34 @@ class NewsController extends Controller
     }
 
     /**
+     * Изменение значений новости
+     * @param Request $rq
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $rq,$id){
+        // Если НЕ POST-запрос
+        if($_POST == []){
+            return view('site.news.update',[
+                'news'=>News::find($id),
+                'categories'=>Categories::all()
+            ]);
+        } else {
+            $news = new News();
+            $news->updateNews($id,$rq->all());
+
+            return redirect()->route('index');
+        }
+    }
+
+    /**
      * Подробная информация о новости
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function more($id){
-        $news = new News();
-
         return view('site.news.more',[
-            'news'=>$news->findById($id),
+            'news'=>News::find($id),
             'categories'=>Categories::all()
         ]);
     }
