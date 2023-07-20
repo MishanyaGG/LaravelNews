@@ -17,6 +17,25 @@ class CategoriesController extends Controller
 
             return redirect()->route('index');
         }
+    }
 
+    public function delete($id){
+        Categories::find($id)->delete();
+
+        return redirect()->route('index');
+    }
+
+    public function update(Request $rq,$id){
+        if ($_POST == []){
+            return view('site.category.update',[
+                'categories'=>Categories::find($id)
+            ]);
+        } else{
+            $category = new Categories();
+
+            $category->categoryUpdate($id,$rq->all());
+
+            return redirect()->route('index');
+        }
     }
 }

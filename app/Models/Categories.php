@@ -41,6 +41,18 @@ class Categories extends Model
         }
     }
 
+    public function categoryUpdate($id,$values){
+        $instance = Categories::find($id);
+
+        try {
+            $instance->name_of_category = $values['name_of_category'];
+
+            $instance->save();
+        } catch (\Exception $exception){
+            dd($exception);
+        }
+    }
+
     /**
      * Связь с моделью "news"
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

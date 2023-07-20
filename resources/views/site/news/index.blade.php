@@ -10,7 +10,7 @@
             @csrf
 
             <div style="display: flex">
-                <select name="category_name" style="margin-right: 10px; width: 30%" class="form-select" aria-label="Пример выбора по умолчанию">
+                <select name="category_name" onchange="onchancheCategory()" id="id_categories" style="margin-right: 10px; width: 30%" class="form-select" aria-label="Пример выбора по умолчанию">
                     <option selected disabled>Категории</option>
                     <!-- Перебираем -->
                     @foreach($categories as $category_values)
@@ -23,8 +23,8 @@
     </div>
     <div style="margin-left: 28%; margin-top: 10px">
         <a href="{{route('categoryCreate')}}"><button class="btn btn-success">Создать категорию</button></a>
-        <a href="#"><button class="btn btn-secondary">Изменить категорию</button></a>
-        <a href="#"><button class="btn btn-danger">Удалить категорию</button></a>
+        <a id="btnUpdate" class="btn btn-secondary" href="{{route('categoryUpdate')}}">Изменить категорию</a>
+        <a id="btnDelete" class="btn btn-danger" href="{{route('categoryDelete')}}">Удалить категорию</a>
     </div>
 @endsection
 

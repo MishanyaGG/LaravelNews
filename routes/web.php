@@ -31,3 +31,7 @@ Route::match(['get','post'],'/newsUpdate/{id}','NewsController@update')->name('n
 
 Route::match(['get','post'],'/categoryCreate','CategoriesController@create')->name('categoryCreate');
 
+Route::match(['get','post'],'/categoryUpdate/{id?}','CategoriesController@update')->name('categoryUpdate');
+
+Route::get('/categoryDelete/{id?}','CategoriesController@delete')->name('categoryDelete');
+
