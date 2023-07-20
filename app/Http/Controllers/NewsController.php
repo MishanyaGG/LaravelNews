@@ -36,7 +36,7 @@ class NewsController extends Controller
             ]);
         } else {
             $news = new News();
-            $news->createNews($rq->all());
+            $news->newsCreate($rq->all());
 
             return redirect()->route('index');
         }
@@ -57,7 +57,7 @@ class NewsController extends Controller
             ]);
         } else {
             $news = new News();
-            $news->updateNews($id,$rq->all());
+            $news->newsUpdate($id,$rq->all());
 
             return redirect()->route('index');
         }
@@ -82,7 +82,7 @@ class NewsController extends Controller
     public function delete($id){
         $news = new News();
 
-        $news->deleteNews($id);
+        $news->newsDelete($id);
 
         return redirect()->route('index');
     }

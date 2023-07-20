@@ -47,7 +47,7 @@ class News extends Model
      * @param Request $values
      * @return void
      */
-    public function createNews($values){
+    public function newsCreate($values){
         $instance = new News();
 
         try {
@@ -68,7 +68,7 @@ class News extends Model
      * @param Request $values
      * @return void
      */
-    public function updateNews($id, $values)
+    public function newsUpdate($id, $values)
     {
         $instance = News::find($id);
 
@@ -89,7 +89,7 @@ class News extends Model
      * @param int $id
      * @return void
      */
-    public function deleteNews($id){
+    public function newsDelete($id){
         News::find($id)->delete();
     }
 }

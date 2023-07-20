@@ -18,9 +18,13 @@
                     @endforeach
                 </select>
                 <button class="btn btn-primary" type="submit">Поиск</button>
-
             </div>
         </form>
+    </div>
+    <div style="margin-left: 28%; margin-top: 10px">
+        <a href="{{route('categoryCreate')}}"><button class="btn btn-success">Создать категорию</button></a>
+        <a href="#"><button class="btn btn-secondary">Изменить категорию</button></a>
+        <a href="#"><button class="btn btn-danger">Удалить категорию</button></a>
     </div>
 @endsection
 
@@ -35,9 +39,9 @@
 
                     <p>{{$news_values->information}}</p>
 
-                    <a href="{{route('more',$news_values->id)}}"><button class="btn btn-primary">Подробнее</button></a>
-                    <a href="{{route('delete',$news_values->id)}}"><button class="btn btn-danger">Удалить</button></a>
-                    <a href="{{route('update',$news_values->id)}}"><button class="btn btn-secondary">Изменить</button></a>
+                    <a href="{{route('newsMore',$news_values->id)}}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a href="{{route('newsDelete',$news_values->id)}}"><button class="btn btn-danger">Удалить</button></a>
+                    <a href="{{route('newsUpdate',$news_values->id)}}"><button class="btn btn-secondary">Изменить</button></a>
                 </div>
 
         @endforeach

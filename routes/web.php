@@ -21,11 +21,13 @@ Route::get('/','NewsController@index')->name('index');
 Route::match(['get','post'],'/editNews','NewsController@create')->name('newsCreate');
 
 // Подробная информация новости
-Route::get('/more/{id}','NewsController@more')->name('more');
+Route::get('/newsMore/{id}','NewsController@more')->name('newsMore');
 
 // Удаление новости
-Route::get('/delete/{id}','NewsController@delete')->name('delete');
+Route::get('/newsDelete/{id}','NewsController@delete')->name('newsDelete');
 
 // Изменение новости
-Route::match(['get','post'],'/update/{id}','NewsController@update')->name('update');
+Route::match(['get','post'],'/newsUpdate/{id}','NewsController@update')->name('newsUpdate');
+
+Route::match(['get','post'],'/categoryCreate','CategoriesController@create')->name('categoryCreate');
 
