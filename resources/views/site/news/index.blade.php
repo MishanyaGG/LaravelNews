@@ -42,7 +42,10 @@
 
         @endforeach
     </div>
-    {{$news->links()}}
+
+    <div align="center">
+        {{$news->links()}}
+    </div>
 @endsection
 
 

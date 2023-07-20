@@ -17,7 +17,8 @@
                 </a>
                 <ul class="nav nav-pills">
                     <!-- Вход в акк -->
-                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Для администратора</a></li>
+                    <li class="nav-item"><a href="{{route('newsCreate')}}" aria-current="page"><button style="margin-right: 10px" class="btn btn-success">Создать новость</button></a></li>
+                    <li class="nav-item"><a href="#" aria-current="page"><button class="btn btn-primary">Для администратора</button></a></li>
                 </ul>
             </header>
         </div>
