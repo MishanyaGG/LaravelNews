@@ -7,6 +7,11 @@ use App\Models\Users;
 
 class UsersController extends Controller
 {
+    /**
+     * Вход в аккаунт
+     * @param Request $rq
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse
+     */
     public function login(Request $rq){
 
         if ($_POST == []){
@@ -27,6 +32,10 @@ class UsersController extends Controller
         }
     }
 
+    /**
+     * Выход из аккаунта
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logOut(){
         session_destroy();
 

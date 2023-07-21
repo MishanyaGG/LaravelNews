@@ -18,6 +18,7 @@ session_start();
 // Главная страница
 Route::get('/','NewsController@index')->name('index');
 
+// Главная страница (с начала старые новости)
 Route::get('/old','NewsController@old')->name('old');
 
 // GET, POST URL - создание новости
@@ -26,6 +27,7 @@ Route::match(['get','post'],'/editNews','NewsController@create')->name('newsCrea
 // Подробная информация новости
 Route::get('/newsMore/{id}','NewsController@more')->name('newsMore');
 
+// Поиск по категории
 Route::post('/findByCategory','NewsController@findByCategory')->name('findByCategory');
 
 // Удаление новости
@@ -43,7 +45,9 @@ Route::match(['get','post'],'/categoryUpdate/{id?}','CategoriesController@update
 // Удаление новости
 Route::get('/categoryDelete/{id?}','CategoriesController@delete')->name('categoryDelete');
 
+// Вход в аккаунт
 Route::match(['get','post'],'/login','UsersController@login')->name('login');
 
+// Выход из аккаунта
 Route::get('/logOut','UsersController@logOut')->name('logOut');
 

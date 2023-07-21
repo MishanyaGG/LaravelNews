@@ -22,6 +22,10 @@ class NewsController extends Controller
         ]);
     }
 
+    /**
+     * Главная страница (с начала старые новости)
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
     public function old(){
         return view('site.news.index',[
             'news'=>News::orderBy('date')->paginate(3),
@@ -29,8 +33,12 @@ class NewsController extends Controller
         ]);
     }
 
+    /**
+     * Фильтрация новостей
+     * @param Request $rq
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
     public function findByCategory(Request $rq){
-
         return view('site.news.index',[
             'news'=>News::where('id_categories','=',$rq->all()['id_categories'])->paginate(3),
             'categories'=>Categories::all()
@@ -91,6 +99,7 @@ class NewsController extends Controller
     }
 
     /**
+     * Удаление новости
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */

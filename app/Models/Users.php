@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,6 +28,11 @@ class Users extends Model
         return 'users';
     }
 
+    /**
+     * Вход в аккаунт
+     * @param Request $values
+     * @return bool
+     */
     public function login($values){
         if (Users::where([
             ['login','=',$values['login']],
