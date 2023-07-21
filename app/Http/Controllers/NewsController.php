@@ -29,6 +29,14 @@ class NewsController extends Controller
         ]);
     }
 
+    public function findByCategory(Request $rq){
+
+        return view('site.news.index',[
+            'news'=>News::where('id_categories','=',$rq->all()['id_categories'])->paginate(3),
+            'categories'=>Categories::all()
+        ]);
+    }
+
     /**
      * Создание новости
      * @param Request $rq

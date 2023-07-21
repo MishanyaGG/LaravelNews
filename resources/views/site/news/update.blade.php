@@ -1,13 +1,13 @@
 @extends('form._hat')
 
 @section('title')
-    Создание новости
+    Изменение новости
 @endsection
 
 @section('content')
-    <h1>Создание новости</h1>
+    <h1>Изменение новости</h1>
 
-    <form class="form" action="{{route('update',$news->id)}}" method="post">
+    <form class="form" action="{{route('newsUpdate',$news->id)}}" method="post">
         @csrf
 
         <div class="form-group">

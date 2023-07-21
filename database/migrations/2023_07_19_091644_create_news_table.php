@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('date');
 
             $table->bigInteger('id_categories')->unsigned()->index();
-            $table->foreign('id_categories')->on('categories')->references('id');
+            $table->foreign('id_categories')->on('categories')->references('id')->cascadeOnDelete();
         });
     }
 

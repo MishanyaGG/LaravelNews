@@ -17,8 +17,12 @@
                 </a>
                 <ul class="nav nav-pills">
                     <!-- Вход в акк -->
-                    <li class="nav-item"><a href="{{route('newsCreate')}}" aria-current="page"><button style="margin-right: 10px" class="btn btn-success">Создать новость</button></a></li>
-                    <li class="nav-item"><a href="#" aria-current="page"><button class="btn btn-primary">Для администратора</button></a></li>
+                    @if(isset($_SESSION['users']))
+                        <li class="nav-item"><a href="{{route('newsCreate')}}" aria-current="page"><button style="margin-right: 10px" class="btn btn-success">Создать новость</button></a></li>
+                        <li class="nav-item"><a href="{{route('logOut')}}" aria-current="page"><button style="margin-right: 10px" class="btn btn-primary">Выход ({{$_SESSION['users']['login']}})</button></a></li>
+                    @else
+                        <li class="nav-item"><a href="{{route('login')}}" aria-current="page"><button class="btn btn-primary">Для администратора</button></a></li>
+                    @endif
                 </ul>
             </header>
         </div>

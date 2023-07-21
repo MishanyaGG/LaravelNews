@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,6 +30,11 @@ class Categories extends Model
         return 'categories';
     }
 
+    /**
+     * Создание категории
+     * @param Request $values
+     * @return void
+     */
     public function categoryCreate($values){
         $instance = new Categories();
 
@@ -41,6 +47,12 @@ class Categories extends Model
         }
     }
 
+    /**
+     * Изменение категории
+     * @param int $id
+     * @param Request $values
+     * @return void
+     */
     public function categoryUpdate($id,$values){
         $instance = Categories::find($id);
 
