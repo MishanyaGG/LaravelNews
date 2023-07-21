@@ -23,7 +23,7 @@
 
         <div class="form-group">
             <label for="information">Пароль</label>
-            <input class="form-control" name="password" id="header" type="text" required>
+            <input class="form-control" name="password" id="header" type="password" required>
         </div>
 
         <button style="width: 200px; margin-top: 10px" class="btn btn-success" type="submit">Войти</button>
